@@ -6,7 +6,7 @@ import android.os.Looper
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.example.travenortravellingapp.presentation.nav_graph.SetNavGraph
+import com.example.travenortravellingapp.presentation.nav_graph.SetAuthNavGraph
 import com.example.travenortravellingapp.ui.theme.TravenorTravellingAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             TravenorTravellingAppTheme {
-                SetNavGraph()
+                SetAuthNavGraph()
             }
         }
     }

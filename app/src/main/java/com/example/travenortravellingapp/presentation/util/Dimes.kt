@@ -12,6 +12,7 @@ object Dimes {
     val MediumTextSize = 26.sp
     val LargeTextSize = 40.sp
     val ContentTextSize = 16.sp
+    val IconTextSize = 12.sp
 
     val VerySmallPadding = 8.dp
     val SmallPadding = 16.dp
@@ -34,4 +35,18 @@ object Dimes {
     val SmallBorderWidth = 12.dp
     val MediumBorderWidth = 24.dp
     val LargeBorderWidth = 48.dp
+
+    val LargeCardWidth = 268.dp
+    val LargeCardHeight = 384.dp
+
+    val MediumCardWidth = 335.dp
+    val MediumCardHeight = 100.dp
+
+
+    val SmallImageCardWidth = 240.dp
+    val SmallImageCardHeight = 286.dp
+    val VerySmallImageCardWidth = 126.dp
+    val VerySmallImageCardHeight = 100.dp
+
+    val SmallIconSize = 24.dp
 }

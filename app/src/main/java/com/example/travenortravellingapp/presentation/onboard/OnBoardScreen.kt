@@ -1,6 +1,5 @@
 package com.example.travenortravellingapp.presentation.onboard
 
-import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -9,12 +8,11 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.travenortravellingapp.R
 import com.example.travenortravellingapp.domain.model.listOnboardPage
@@ -23,22 +21,21 @@ import com.example.travenortravellingapp.presentation.nav_graph.Routes
 import com.example.travenortravellingapp.presentation.onboard.component.OnBoardingPage
 import com.example.travenortravellingapp.presentation.onboard.component.PageIndicator
 import com.example.travenortravellingapp.presentation.util.Dimes
-import com.example.travenortravellingapp.presentation.util.RoutesKeyName
 import kotlinx.coroutines.launch
 
-//@Preview(
-//    showBackground = true,
-//    widthDp = 375,
-//    heightDp = 812
-//)
-//@Composable
-//fun PreviewOnBoardScreen() {
-//    OnBoardScreen()
-//}
+@Preview(
+    showBackground = true,
+    widthDp = 375,
+    heightDp = 812
+)
+@Composable
+fun PreviewOnBoardScreen() {
+    OnBoardScreen()
+}
 
 @Composable
 fun OnBoardScreen(
-    navController: NavController
+    navController: NavHostController = rememberNavController()
 ) {
     Column(
         modifier = Modifier
@@ -73,7 +70,7 @@ fun OnBoardScreen(
             ) {
                 scope.launch {
                     if (pageState.currentPage >= pageState.pageCount - 1) {
-                        navController.navigate(route = Routes.HomeScreen.route)
+                        navController.navigate(route = Routes.MainScreen.route)
                     } else {
                         pageState.animateScrollToPage(page = pageState.currentPage + 1)
                     }

@@ -17,4 +17,6 @@
     <color name="green">#431B00</color>
     <color name="primary_color">#24BAEC</color>
     <color name="primary_color_1">#CAEAFF</color>
+    <color name="yellow_color">#FFD336</color>
+    <color name="sub_text_color">#7D848D</color>
 </resources>

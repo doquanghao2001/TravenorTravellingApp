@@ -47,7 +47,7 @@ fun OnBoardingPage(
         Image(
             modifier = Modifier
                 .fillMaxWidth()
-                .fillMaxHeight(0.545f)
+                .fillMaxHeight(0.5f)
                 .clip(
                     RoundedCornerShape(
                         bottomStart = Dimes.MediumCornerRadius,

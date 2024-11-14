@@ -99,4 +99,6 @@ dependencies {
 
     // lottie
     implementation (libs.lottie.compose)
+
+    implementation(libs.androidx.navigation.compose.v275)
 }

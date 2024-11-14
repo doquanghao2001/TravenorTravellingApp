@@ -12,5 +12,4 @@ sealed class Routes(val route: String) {
     data object MainScreen : Routes(route = RoutesKeyName.ROUTE_KEY_MAIN_SCREEN)
     data object DetailsScreen : Routes(route = RoutesKeyName.ROUTE_KEY_DETAILS_SCREEN)
     data object MainRoute : Routes(route = RoutesKeyName.ROUTE_KEY_MAIN_ROUTE)
-    data object DetailsRoute : Routes(route = RoutesKeyName.ROUTE_KEY_DETAILS_ROUTE)
 }

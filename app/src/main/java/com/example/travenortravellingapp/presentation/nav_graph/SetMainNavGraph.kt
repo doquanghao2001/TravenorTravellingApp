@@ -11,6 +11,5 @@ fun SetMainNavGraph(navController: NavHostController) {
         startDestination = Routes.MainRoute.route,
     ) {
         mainGraph(navController = navController)
-        detailsGraph(navController = navController)
     }
 }

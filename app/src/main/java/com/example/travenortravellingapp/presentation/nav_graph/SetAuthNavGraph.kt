@@ -17,7 +17,7 @@ fun SetAuthNavGraph() {
         }
 
         composable(route = Routes.MainScreen.route) {
-            MainScreen(navController = navController)
+            MainScreen()
         }
     }
 }

@@ -48,6 +48,7 @@ fun ButtonBox(
     fontSize: TextUnit = Dimes.MediumTextSize,
     fraction: Float = 1f,
     height: Dp = Dimes.SmallBoxHeight,
+    borderRadius: Dp = Dimes.LargeCornerRadius,
     onButtonClick: () -> Unit,
 ) {
     val interactionSource = remember { MutableInteractionSource() }
@@ -79,7 +80,7 @@ fun ButtonBox(
                 ) { onButtonClick() }
                 .fillMaxWidth(fraction)
                 .height(height)
-                .clip(RoundedCornerShape(Dimes.LargeCornerRadius))
+                .clip(RoundedCornerShape(borderRadius))
                 .background(containerColor),
             contentAlignment = Alignment.Center,
         ) {

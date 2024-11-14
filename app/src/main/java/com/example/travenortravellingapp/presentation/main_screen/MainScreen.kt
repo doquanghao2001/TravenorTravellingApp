@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -21,6 +22,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.travenortravellingapp.R
 import com.example.travenortravellingapp.presentation.common.IconButtonBox
@@ -37,7 +39,7 @@ fun PreviewMainScreen() {
 }
 
 @Composable
-fun MainScreen(navController: NavHostController = rememberNavController()) {
+fun MainScreen() {
     val navControllerMainScreen = rememberNavController()
     val selected = remember {
         mutableStateOf(R.drawable.icon_home)
@@ -56,6 +58,20 @@ fun MainScreen(navController: NavHostController = rememberNavController()) {
         ) {
             SetMainNavGraph(navControllerMainScreen)
         }
+
+        val screens = listOf(
+            Routes.HomeScreen.route,
+            Routes.CalendarScreen.route,
+            Routes.MessagesScreen.route,
+            Routes.ProfileScreen.route,
+        )
+
+        val navBackStackEntry by navControllerMainScreen.currentBackStackEntryAsState()
+        val currentDestination = navBackStackEntry?.destination
+
+        val bottomBarDestination = screens.any { it == currentDestination?.route }
+
+        if (bottomBarDestination) {
         val shadowColor = Color(color = R.color.black).copy(alpha = 1f)
         Box(
             modifier = Modifier
@@ -119,9 +135,7 @@ fun MainScreen(navController: NavHostController = rememberNavController()) {
                     sizeBox = 50.dp,
 
                     ) {
-                    navControllerMainScreen.navigate(Routes.HomeScreen.route) {
-                        popUpTo(0)
-                    }
+
                 }
 
                 IconButtonBox(
@@ -158,6 +172,7 @@ fun MainScreen(navController: NavHostController = rememberNavController()) {
                     }
                 }
             }
+        }
         }
     }
 }
